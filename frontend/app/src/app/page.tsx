@@ -24,11 +24,16 @@ const Home: React.FC = async () => {
           Current booking count: {bookings.length}
         </h1>
         <BookingList bookings={bookings} />
-        <Link href="/create-booking">
-          <button className="mt-4 w-full bg-blue-500 text-white font-semibold py-2 rounded hover:bg-blue-600 transition duration-200">
+        {/* I had to switch from Next Link to native a tag to prevent usage of useEffect cause I had some troubles */}
+        {/* <Link href="/create-booking" className="mt-4 w-full bg-blue-500 text-white font-semibold py-2 rounded hover:bg-blue-600 transition duration-200">
             Create New Booking
-          </button>
-        </Link>
+        </Link> */}
+        <a
+          href="/create-booking"
+          className="mt-4 w-fit block bg-blue-500 text-white font-semibold px-3 py-2 rounded hover:bg-blue-600 transition duration-200"
+        >
+          Create New Booking
+        </a>
       </div>
     </div>
   );
