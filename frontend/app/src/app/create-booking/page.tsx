@@ -21,9 +21,6 @@ export default function CreateBooking() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log(formData);
-    console.log(JSON.stringify(formData));
-
     const response = await fetch("http://localhost:5000/api/bookings", {
       method: "POST",
       headers: {
@@ -32,9 +29,6 @@ export default function CreateBooking() {
       body: JSON.stringify(formData),
     });
 
-    console.log(JSON.stringify(formData));
-
-    console.log(response);
 
     if (response.status === 200 || response.status === 201) {
       router.push("/");
